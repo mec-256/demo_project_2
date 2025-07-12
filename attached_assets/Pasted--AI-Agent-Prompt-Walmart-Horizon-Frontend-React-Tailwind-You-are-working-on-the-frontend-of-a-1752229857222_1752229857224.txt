@@ -1,0 +1,126 @@
+🧠 AI Agent Prompt: Walmart Horizon Frontend (React + Tailwind)
+You are working on the frontend of a project called Walmart Horizon.
+
+It is a web application that helps Walmart explore expansion into new cities by simulating demand, assessing last-mile delivery feasibility, and optimizing inventory planning.
+
+The frontend is built with:
+
+React.js (created using Create React App)
+
+Tailwind CSS (v4+)
+
+Future integrations with Mapbox (for map visualizations) and Chart.js or Recharts (for visual data)
+
+🧱 Project Directory Structure (inside frontend/):
+
+pgsql
+Copy
+Edit
+frontend/
+├── public/
+├── src/
+│   ├── components/
+│   │   └── CitySelector.js
+│   ├── pages/
+│   │   └── Dashboard.js
+│   ├── App.js
+│   ├── index.js
+│   ├── index.css
+├── tailwind.config.js
+├── postcss.config.js
+├── package.json
+✨ Core Requirements:
+Create a responsive UI dashboard using Tailwind CSS.
+
+Have a CitySelector dropdown that lets the user choose cities like:
+
+Hyderabad
+
+Mumbai
+
+Delhi
+
+Bengaluru
+
+Chennai
+
+Once a city is selected, fetch data from the backend (API endpoints to be provided later).
+
+Display placeholder sections for:
+
+Mapbox map view
+
+Charts (demand simulation, delivery zones)
+
+Inventory recommendation
+
+Optional: Add tab navigation or a sidebar.
+
+🔌 Frontend-Backend Integration:
+Assume that backend will be built using FastAPI and provide RESTful endpoints like:
+
+GET /cities
+
+GET /data/{city}
+
+POST /simulate
+
+etc.
+
+You can use axios or fetch to make API calls once backend is ready.
+
+Example:
+
+js
+Copy
+Edit
+fetch(`http://localhost:8000/data/${selectedCity}`)
+  .then(res => res.json())
+  .then(data => {
+    // display on dashboard
+  });
+✅ Tailwind Setup Summary:
+Make sure the following are installed and configured:
+
+📦 devDependencies:
+
+json
+Copy
+Edit
+"devDependencies": {
+  "tailwindcss": "^4.1.11",
+  "postcss": "^8.5.6",
+  "autoprefixer": "^10.4.21",
+  "@tailwindcss/postcss": "^1.0.0"
+}
+📄 postcss.config.js:
+
+js
+Copy
+Edit
+const tailwindcss = require('@tailwindcss/postcss');
+module.exports = {
+  plugins: [tailwindcss(), require('autoprefixer')]
+};
+📄 index.css:
+
+css
+Copy
+Edit
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+📄 tailwind.config.js:
+
+js
+Copy
+Edit
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  theme: {
+    extend: {}
+  },
+  plugins: []
+};
+🧠 Sugg
